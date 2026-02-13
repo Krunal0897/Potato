@@ -3,115 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine's Special Menu</title>
+<title>Reserved for My Beautiful Potato 🥔❤️</title>
+
 <style>
 body {
- margin: 0;
- font-family: 'Segoe UI', sans-serif;
- background: black;
- color: white;
- overflow: hidden;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a0010, #000000);
+  color: white;
+  overflow: hidden;
 }
+
 .container {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- text-align: center;
- padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
 }
+
 .section {
- display: none;
- animation: fade 0.6s ease-in-out;
+  display: none;
+  animation: fade 0.6s ease-in-out;
 }
+
 .active {
- display: block;
+  display: block;
 }
+
 h1 {
- color: #ff4d88;
+  color: #ff4d88;
+  text-shadow: 0 0 12px rgba(255,77,136,0.6);
 }
+
 button {
- margin: 10px;
- padding: 12px 25px;
- border-radius: 25px;
- border: none;
- background: #ff4d88;
- color: white;
- cursor: pointer;
- font-size: 16px;
+  margin: 10px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid #ff4d88;
+  background: transparent;
+  color: #ff4d88;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
+
 button:hover {
- opacity: 0.8;
+  background: #ff4d88;
+  color: white;
+  box-shadow: 0 0 15px rgba(255,77,136,0.6);
 }
+
 @keyframes fade {
- from {opacity: 0;}
- to {opacity: 1;}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
+
 /* Floating Hearts */
 .heart {
- position: absolute;
- color: #ff4d88;
- animation: float 6s linear infinite;
- opacity: 0.6;
+  position: absolute;
+  color: #ff4d88;
+  animation: float 6s linear infinite;
+  opacity: 0.6;
 }
+
 @keyframes float {
- from {transform: translateY(100vh);}
- to {transform: translateY(-10vh);}
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
 }
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
+<!-- PAGE 1 -->
 <div id="s1" class="section active">
-<h1>Valentine's Special Menu</h1>
-<p>Limited edition.<br>Only for one VIP customer.</p>
+<h1>Valentine’s Private Experience</h1>
+<p>
+Exclusively curated.<br>
+Reserved for one VIP guest — my beautiful potato. 🥔❤️
+</p>
 <button onclick="show(2)">Enter</button>
 </div>
+
+<!-- PAGE 2 -->
 <div id="s2" class="section">
-<h1>🍽 Starters</h1>
-<p>10-Min Deep Talk<br>Cook Together<br>Feed Each Other Dessert</p>
+<h1>🍽 First Course — Intimate Beginnings</h1>
+<p>
+Unfiltered Conversation<br>
+(No phones. No distractions. Just us.)<br><br>
+
+Private Kitchen Experience<br>
+(You guide. I execute.)<br><br>
+
+Healthy Dessert Experience<br>
+(One bowl. Two smiles.)
+</p>
 <button onclick="show(1)">Back</button>
 <button onclick="show(3)">Next</button>
 </div>
+
+<!-- PAGE 3 -->
 <div id="s3" class="section">
-<h1>🍝 Main Course</h1>
-<p>Movie Night (You choose)<br>Walk + Ice Cream<br>Shopping - only if you can</p>
+<h1>🍝 Main Course — Shared Moments</h1>
+<p>
+Cinema Under Our Rules<br>
+(You choose. I admire.)<br><br>
+
+Evening Walk & Ice Cream Break<br>
+(Slow steps. Random talks.)<br><br>
+
+Luxury Window Browsing<br>
+(We don’t buy. We imagine.)<br><br>
+
+Real Shopping Challenge<br>
+(Get ready in under 30 minutes. No extensions allowed.)
+</p>
 <button onclick="show(2)">Back</button>
 <button onclick="show(4)">Next</button>
 </div>
+
+<!-- PAGE 4 -->
 <div id="s4" class="section">
-<h1>🍰 Chef’s Special</h1>
-<p>15-Min Hug (No sarcasm allowed)<br>Hoodie Claiming Ceremony<br>One Surprise 😌</p>
+<h1>🍰 Chef’s Signature Indulgence</h1>
+<p>
+Extended Embrace Therapy<br>
+(15 minutes. No sarcasm. Only softness.)<br><br>
+
+Playful Competition<br>
+(Games, teasing, dramatic wins.)<br><br>
+
+A Mystery Designed Only for You 😌
+</p>
 <button onclick="show(3)">Back</button>
 <button onclick="show(5)">Next</button>
 </div>
+
+<!-- PAGE 5 -->
 <div id="s5" class="section">
-<h1>🌙 After Hours</h1>
-<p>Long Shower Concert<br>Cuddles & Sleep Mode</p>
-<p style="margin-top:20px;font-size:14px;opacity:0.8;">
-"You keep saying I’m unromantic.<br>
-So today, I made a menu.<br>
-Because when it comes to you,<br>
-I’m willing to try everything."
+<h1>🌙 After Hours — Soft Ending</h1>
+<p>
+Private Shower Concert<br>
+(Your favorite songs. My terrible singing.)<br><br>
+
+Cuddle Mode Activated<br>
+(Zero world problems allowed.)
 </p>
-<button onclick="exitMenu()">Exit</button>
+
+<p style="margin-top:20px;font-size:14px;opacity:0.8;">
+"You always say I’m not romantic…<br><br>
+Maybe I was just far from you.<br><br>
+Now that I’m here, I wanted to create something special —<br>
+a private experience designed only for you, my beautiful potato. 🥔❤️<br><br>
+Because when it comes to you,<br>
+I don’t just try…<br>
+I give my best."
+</p>
+
+<button onclick="exitMenu()">Leave a Tip 😌</button>
+<button onclick="show(4)">Back</button>
+
 </div>
 </div>
+
 <script>
+
 function show(num) {
- document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
- document.getElementById('s'+num).classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('s'+num).classList.add('active');
 }
-// generate floating hearts
+
+function exitMenu() {
+ document.body.innerHTML = `
+<div style="
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     height:100vh;
+     background:black;
+     color:white;
+     text-align:center;
+     font-family:Segoe UI, sans-serif;
+     padding:20px;">
+<div>
+<h1 style="color:#ff4d88;">Thank You ❤️</h1>
+<p style="font-size:18px;">
+Your private chef is now accepting payment.<br><br>
+Accepted currency: kisses only 😌
+</p>
+</div>
+</div>
+ `;
+}
+
+/* Floating Hearts */
 setInterval(() => {
- const heart = document.createElement('div');
- heart.classList.add('heart');
- heart.innerHTML = "♥";
- heart.style.left = Math.random() * 100 + "vw";
- heart.style.fontSize = (Math.random() * 20 + 10) + "px";
- document.body.appendChild(heart);
- setTimeout(() => heart.remove(), 6000);
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = "♥";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
 }, 500);
+
 </script>
-</body>
-</html>
