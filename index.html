@@ -102,8 +102,27 @@ function show(num) {
  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
  document.getElementById('s'+num).classList.add('active');
 }
- function exitMenu() {
- alert("Your servant is waiting for the tip.\n(Payment: kisses allowed 😌)");
+function exitMenu() {
+ document.body.innerHTML = `
+<div style="
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     height:100vh;
+     background:black;
+     color:white;
+     text-align:center;
+     font-family:Segoe UI, sans-serif;
+     padding:20px;">
+<div>
+<h1 style="color:#ff4d88;">Thank You ❤️</h1>
+<p style="font-size:18px;">
+       Your servant is waiting for the tip.<br><br>
+       (Payment: kisses allowed 😌)
+</p>
+</div>
+</div>
+ `;
 }
 // generate floating hearts
 setInterval(() => {
