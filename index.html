@@ -3,115 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine's Special Menu</title>
+<title>Reserved for My Beautiful Potato 🥔❤️</title>
+
 <style>
 body {
- margin: 0;
- font-family: 'Segoe UI', sans-serif;
- background: black;
- color: white;
- overflow: hidden;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a0010, #000000);
+  color: white;
+  overflow: hidden;
 }
+
 .container {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- text-align: center;
- padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
+
 .section {
- display: none;
- animation: fade 0.6s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
 }
-.active {
- display: block;
+
+.section.active {
+  transform: translateX(0);
 }
+
+.section.prev {
+  transform: translateX(-100%);
+}
+
 h1 {
- color: #ff4d88;
+  color: #ff4d88;
+  text-shadow: 0 0 12px rgba(255,77,136,0.6);
+  font-size: 22px;
 }
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 button {
- margin: 10px;
- padding: 12px 25px;
- border-radius: 25px;
- border: none;
- background: #ff4d88;
- color: white;
- cursor: pointer;
- font-size: 16px;
+  margin: 8px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #ff4d88;
+  background: transparent;
+  color: #ff4d88;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 button:hover {
- opacity: 0.8;
+  background: #ff4d88;
+  color: white;
+  box-shadow: 0 0 15px rgba(255,77,136,0.6);
 }
-@keyframes fade {
- from {opacity: 0;}
- to {opacity: 1;}
-}
-/* Floating Hearts */
+
 .heart {
- position: absolute;
- color: #ff4d88;
- animation: float 6s linear infinite;
- opacity: 0.6;
+  position: fixed;
+  color: #ff4d88;
+  pointer-events: none;
+  animation: explode 1s ease-out forwards;
 }
-@keyframes float {
- from {transform: translateY(100vh);}
- to {transform: translateY(-10vh);}
+
+@keyframes explode {
+  to {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+.typing {
+  border-right: 2px solid #ff4d88;
+  white-space: pre-line;
+  overflow: hidden;
 }
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <div id="s1" class="section active">
-<h1>Valentine's Special Menu</h1>
-<p>Limited edition.<br>Only for one VIP customer.</p>
-<button onclick="show(2)">Enter</button>
+<h1>Valentine’s Private Experience</h1>
+<p>Reserved for one VIP guest — my beautiful potato 🥔❤️</p>
+<button onclick="startExperience()">Enter</button>
 </div>
+
 <div id="s2" class="section">
-<h1>🍽 Starters</h1>
-<p>10-Min Deep Talk<br>Cook Together<br>Feed Each Other Dessert</p>
+<h1>🍽 Intimate Beginnings</h1>
+<p>
+Unfiltered Conversation<br>
+(No phones. Just us.)<br><br>
+Private Kitchen Experience<br>
+(You guide. I execute.)<br><br>
+Healthy Dessert Experience<br>
+(One bowl. Two smiles.)
+</p>
 <button onclick="show(1)">Back</button>
 <button onclick="show(3)">Next</button>
 </div>
+
 <div id="s3" class="section">
-<h1>🍝 Main Course</h1>
-<p>Movie Night (You choose)<br>Walk + Ice Cream<br>Shopping - only if you can</p>
+<h1>🍝 Shared Moments</h1>
+<p>
+Cinema Under Our Rules<br><br>
+Evening Walk & Ice Cream Break<br><br>
+Luxury Window Browsing<br>
+(We imagine.)<br><br>
+Real Shopping Challenge<br>
+(Get ready in under 30 minutes.)
+</p>
 <button onclick="show(2)">Back</button>
 <button onclick="show(4)">Next</button>
 </div>
+
 <div id="s4" class="section">
-<h1>🍰 Chef’s Special</h1>
-<p>15-Min Hug (No sarcasm allowed)<br>Hoodie Claiming Ceremony<br>One Surprise 😌</p>
+<h1>🍰 Signature Indulgence</h1>
+<p>
+Extended Embrace Therapy<br><br>
+Playful Competition<br><br>
+A Mystery Designed Only for You 😌
+</p>
 <button onclick="show(3)">Back</button>
 <button onclick="show(5)">Next</button>
 </div>
+
 <div id="s5" class="section">
-<h1>🌙 After Hours</h1>
-<p>Long Shower Concert<br>Cuddles & Sleep Mode</p>
-<p style="margin-top:20px;font-size:14px;opacity:0.8;">
-"You keep saying I’m unromantic.<br>
-So today, I made a menu.<br>
-Because when it comes to you,<br>
-I’m willing to try everything."
-</p>
-<button onclick="exitMenu()">Exit</button>
+<h1>🌙 Soft Ending</h1>
+
+<p id="loveMessage" class="typing"></p>
+
+<button onclick="showFinal()">Continue</button>
+<button onclick="show(4)">Back</button>
 </div>
+
+<div id="s6" class="section">
+<h1>One Final Question 💍</h1>
+<p>Will you continue being my forever Valentine?</p>
+<button onclick="sheSaidYes()">YES ❤️</button>
+<button id="noBtn">No 😏</button>
 </div>
+
+</div>
+
+<audio id="bgMusic" loop>
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+</audio>
+
 <script>
+
+let current = 1;
+
 function show(num) {
- document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
- document.getElementById('s'+num).classList.add('active');
+  document.getElementById('s'+current).classList.remove('active');
+  document.getElementById('s'+num).classList.add('active');
+  current = num;
 }
-// generate floating hearts
-setInterval(() => {
- const heart = document.createElement('div');
- heart.classList.add('heart');
- heart.innerHTML = "♥";
- heart.style.left = Math.random() * 100 + "vw";
- heart.style.fontSize = (Math.random() * 20 + 10) + "px";
- document.body.appendChild(heart);
- setTimeout(() => heart.remove(), 6000);
-}, 500);
+
+function startExperience(){
+  document.getElementById("bgMusic").play().catch(()=>{});
+  show(2);
+}
+
+const message = `You always say I’m not romantic…
+
+Maybe I was just far from you.
+
+Now that I’m here,
+I wanted to create something special —
+a private experience designed only for you,
+my beautiful potato 🥔❤️
+
+Because when it comes to you,
+I don’t just try…
+I give my best.`;
+
+let i = 0;
+function typeWriter() {
+  if (i < message.length) {
+    document.getElementById("loveMessage").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 35);
+  }
+}
+
+function showFinal(){
+  show(6);
+}
+
+function sheSaidYes(){
+  document.body.innerHTML = `
+  <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:#ff4d88;font-family:Segoe UI;text-align:center;">
+  <div>
+  <h1>She Said YES ❤️</h1>
+  <p>Best decision of your life.</p>
+  </div>
+  </div>`;
+}
+
+document.addEventListener("click", function(e){
+  for(let i=0;i<6;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="♥";
+    heart.style.left=e.clientX+"px";
+    heart.style.top=e.clientY+"px";
+    heart.style.setProperty('--x',(Math.random()*200-100)+'px');
+    heart.style.setProperty('--y',(Math.random()*200-100)+'px');
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),1000);
+  }
+});
+
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("touchstart", ()=>{
+  noBtn.style.position="absolute";
+  noBtn.style.left=Math.random()*80+"%";
+  noBtn.style.top=Math.random()*80+"%";
+});
+
+document.getElementById("s5").addEventListener("transitionend", typeWriter);
+
 </script>
+
 </body>
 </html>
