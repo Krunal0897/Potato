@@ -3,115 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine's Special Menu</title>
+<title>Reserved for My Beautiful Potato 🥔❤️</title>
+
 <style>
 body {
- margin: 0;
- font-family: 'Segoe UI', sans-serif;
- background: black;
- color: white;
- overflow: hidden;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a0010, #000000);
+  color: white;
+  overflow: hidden;
 }
+
 .container {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- text-align: center;
- padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
+
 .section {
- display: none;
- animation: fade 0.6s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
 }
-.active {
- display: block;
+
+.section.active {
+  transform: translateX(0);
 }
-h1 {
- color: #ff4d88;
-}
-button {
- margin: 10px;
- padding: 12px 25px;
- border-radius: 25px;
- border: none;
- background: #ff4d88;
- color: white;
- cursor: pointer;
- font-size: 16px;
-}
-button:hover {
- opacity: 0.8;
-}
-@keyframes fade {
- from {opacity: 0;}
- to {opacity: 1;}
-}
-/* Floating Hearts */
-.heart {
- position: absolute;
- color: #ff4d88;
- animation: float 6s linear infinite;
- opacity: 0.6;
-}
-@keyframes float {
- from {transform: translateY(100vh);}
- to {transform: translateY(-10vh);}
-}
-</style>
-</head>
-<body>
-<div class="container">
-<div id="s1" class="section active">
-<h1>Valentine's Special Menu</h1>
-<p>Limited edition.<br>Only for one VIP customer.</p>
-<button onclick="show(2)">Enter</button>
-</div>
-<div id="s2" class="section">
-<h1>🍽 Starters</h1>
-<p>10-Min Deep Talk<br>Cook Together<br>Feed Each Other Dessert</p>
-<button onclick="show(1)">Back</button>
-<button onclick="show(3)">Next</button>
-</div>
-<div id="s3" class="section">
-<h1>🍝 Main Course</h1>
-<p>Movie Night (You choose)<br>Walk + Ice Cream<br>Shopping - only if you can</p>
-<button onclick="show(2)">Back</button>
-<button onclick="show(4)">Next</button>
-</div>
-<div id="s4" class="section">
-<h1>🍰 Chef’s Special</h1>
-<p>15-Min Hug (No sarcasm allowed)<br>Hoodie Claiming Ceremony<br>One Surprise 😌</p>
-<button onclick="show(3)">Back</button>
-<button onclick="show(5)">Next</button>
-</div>
-<div id="s5" class="section">
-<h1>🌙 After Hours</h1>
-<p>Long Shower Concert<br>Cuddles & Sleep Mode</p>
-<p style="margin-top:20px;font-size:14px;opacity:0.8;">
-"You keep saying I’m unromantic.<br>
-So today, I made a menu.<br>
-Because when it comes to you,<br>
-I’m willing to try everything."
-</p>
-<button onclick="exitMenu()">Exit</button>
-</div>
-</div>
-<script>
-function show(num) {
- document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
- document.getElementById('s'+num).classList.add('active');
-}
-// generate floating hearts
-setInterval(() => {
- const heart = document.createElement('div');
- heart.classList.add('heart');
- heart.innerHTML = "♥";
- heart.style.left = Math.random() * 100 + "vw";
- heart.style.fontSize = (Math.random() * 20 + 10) + "px";
- document.body.appendChild(heart);
- setTimeout(() => heart.remove(), 6000);
-}, 500);
-</script>
-</body>
-</html>
+
+.section.prev {
+  transform: t
