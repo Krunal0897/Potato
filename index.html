@@ -81,13 +81,13 @@ button:hover {
 </div>
 <div id="s4" class="section">
 <h1>🍰 Chef’s Special</h1>
-<p>15-Min Hug (No sarcasm allowed)<br>Hoodie Claiming Ceremony<br>One Surprise 😌</p>
+<p>15-Min Hug + babying (No sarcasm allowed)<br>Games<br>One Surprise 😌</p>
 <button onclick="show(3)">Back</button>
 <button onclick="show(5)">Next</button>
 </div>
 <div id="s5" class="section">
 <h1>🌙 After Hours</h1>
-<p>Long Shower Concert<br>Cuddles & Sleep Mode</p>
+<p>Long Shower Concert with music of your choice<br>Cuddles & Sleep Mode</p>
 <p style="margin-top:20px;font-size:14px;opacity:0.8;">
 "You keep saying I’m unromantic.<br>
 So today, I made a menu.<br>
@@ -101,6 +101,9 @@ I’m willing to try everything."
 function show(num) {
  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
  document.getElementById('s'+num).classList.add('active');
+}
+ function exitMenu() {
+ alert("Your servant is waiting for the tip.\n(Payment: kisses allowed 😌)");
 }
 // generate floating hearts
 setInterval(() => {
